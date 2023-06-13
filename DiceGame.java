@@ -5,10 +5,12 @@ public class DiceGame{
         Dice dice = new Dice();
 
         dice.RoleDice();
+
+        System.out.println("You "+dice.WonOrLost(dice
+        .sum));
    }
 
 }
-
 
 class Dice{
     int sum;
@@ -26,5 +28,17 @@ class Dice{
         System.out.println("Die 2: "+Die2);
         sum = Die1 + Die2;
         System.out.println("Total value: "+ sum);
+    }
+
+    String WonOrLost(int total){
+        String result;
+        if(total > 7){
+            result = "won!";
+            return result;
+        }
+        else{
+            result = "lost!";
+            return result;
+        }
     }
 }
